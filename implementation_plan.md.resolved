@@ -1,0 +1,182 @@
+# Backend Implementation for BMKG Amahai Website
+
+Implement a functional backend for the existing Blade UI: database tables, Eloquent models, controllers, Form Request validation, XSS sanitization, rate limiting, secure file uploads, and clean routing.
+
+## Proposed Changes
+
+### Database Migrations
+
+#### [NEW] [create_prakiraan_cuacas_table.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/database/migrations)
+Table: `prakiraan_cuacas`
+- `id`, `kecamatan` (string), `tanggal` (date), `jam` (string), `cuaca` (string), `suhu` (integer), `kelembaban` (integer), `angin_arah` (string), `angin_kecepatan` (integer), `icon` (string), `timestamps`
+
+#### [NEW] [create_pegawais_table.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/database/migrations)
+Table: `pegawais`
+- `id`, `nama` (string), `jabatan` (string), `nip` (string unique), `pendidikan` (string), `golongan` (string), `foto` (string nullable — path to uploaded photo), `urutan` (integer default 0 — display order), `timestamps`
+
+#### [NEW] [create_pengaduans_table.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/database/migrations)
+Table: `pengaduans`
+- `id`, `nama` (string), `nik` (string), `email` (string), `telepon` (string), `kategori` (string), `judul` (string), `isi` (text), `nomor_tiket` (string unique), `timestamps`
+
+#### [NEW] [create_kritik_sarans_table.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/database/migrations)
+Table: `kritik_sarans`
+- `id`, `nama` (string nullable), `email` (string nullable), `jenis` (string — kritik/saran), `aspek` (string), `rating` (tinyInteger), `pesan` (text), `timestamps`
+
+---
+
+### Eloquent Models
+
+#### [NEW] [PrakiraanCuaca.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/app/Models/PrakiraanCuaca.php)
+Mass-assignable fields, `$casts` for `tanggal` → `date`. Scope `scopeForToday()`.
+
+#### [NEW] [Pegawai.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/app/Models/Pegawai.php)
+Mass-assignable fields, default ordering by `urutan`. Accessor for photo URL.
+
+#### [NEW] [Pengaduan.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/app/Models/Pengaduan.php)
+Mass-assignable fields. Auto-generate `nomor_tiket` via model boot event.
+
+#### [NEW] [KritikSaran.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/app/Models/KritikSaran.php)
+Mass-assignable fields.
+
+---
+
+### Form Request Validation (Security: no validation in controllers)
+
+#### [NEW] [StorePengaduanRequest.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/app/Http/Requests/StorePengaduanRequest.php)
+Rules:
+- `nama`: required, string, max:255 — strip_tags sanitization
+- `nik`: required, string, digits:16
+- `email`: required, email, max:255
+- `telepon`: required, string, regex:/^08\d{8,12}$/
+- `kategori`: required, string, in:[list of valid categories]
+- `judul`: required, string, max:255 — strip_tags sanitization
+- `isi`: required, string, min:30, max:1000 — strip_tags sanitization
+- `konfirmasi`: required, accepted
+
+`passedValidation()` hook: sanitize string inputs via `strip_tags()` + `htmlspecialchars()`.
+
+#### [NEW] [StoreKritikSaranRequest.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/app/Http/Requests/StoreKritikSaranRequest.php)
+Rules:
+- `nama`: nullable, string, max:255
+- `email`: nullable, email, max:255
+- `jenis`: required, in:kritik,saran
+- `aspek`: required, string, in:[list of valid aspects]
+- `rating`: required, integer, between:1,5
+- `pesan`: required, string, min:20, max:2000
+
+`passedValidation()` hook: sanitize via `strip_tags()`.
+
+---
+
+### Controllers
+
+#### [NEW] [BerandaController.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/app/Http/Controllers/BerandaController.php)
+`index()` — fetch today's weather data from `PrakiraanCuaca`, pass `$weatherCards` to `beranda` view. Falls back to hardcoded data if DB is empty.
+
+#### [NEW] [PrakiraanCuacaController.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/app/Http/Controllers/PrakiraanCuacaController.php)
+`index()` — group `PrakiraanCuaca` by `kecamatan` for today's date, pass `$kecamatans` to view. Falls back to the current hardcoded data as default.
+
+#### [NEW] [PegawaiController.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/app/Http/Controllers/PegawaiController.php)
+`index()` — fetch all `Pegawai` ordered by `urutan`, pass to view. Falls back to hardcoded data if table is empty.
+
+#### [NEW] [PengaduanController.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/app/Http/Controllers/PengaduanController.php)
+`create()` — return the form view.
+`store(StorePengaduanRequest $request)` — save to DB, redirect back with success message + ticket number.
+
+#### [NEW] [KritikSaranController.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/app/Http/Controllers/KritikSaranController.php)
+`create()` — return the form view.
+`store(StoreKritikSaranRequest $request)` — save to DB, redirect back with success message.
+
+---
+
+### Blade View Updates
+
+#### [MODIFY] [cuaca.blade.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/resources/views/pages/prakiraan/cuaca.blade.php)
+Remove hardcoded `@php $kecamatans = [...]` block. The `$kecamatans` variable will now come from the controller.
+
+#### [MODIFY] [sdm.blade.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/resources/views/pages/profil/sdm.blade.php)
+Remove hardcoded `@php $pegawai = [...]` block. Add support for showing uploaded photo if `$p['foto']` exists. The `$pegawai` and `$jabatan_colors` will come from the controller.
+
+#### [MODIFY] [pengaduan.blade.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/resources/views/pages/publik/pengaduan.blade.php)
+Change `@submit.prevent="submitForm"` to real form POST submission. Show validation errors via `@error` directives. Keep Alpine JS for client-side UX but ensure the form actually submits to the server. Display `session('tiket')` for ticket number.
+
+#### [MODIFY] [kritik-saran.blade.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/resources/views/pages/publik/kritik-saran.blade.php)
+Same approach: real form POST + server-side validation errors + keep Alpine UX enhancements. Add `action="{{ url('/publik/kritik-saran') }}"` and hidden inputs for `jenis` and `rating`.
+
+#### [MODIFY] [beranda.blade.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/resources/views/pages/beranda.blade.php)
+Remove hardcoded `$weatherCards` array, use controller-provided variable instead.
+
+---
+
+### Security Implementation
+
+#### Rate Limiting (Throttle)
+In [routes/web.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/routes/web.php), apply `->middleware('throttle:5,1')` to POST `/publik/pengaduan` — max 5 requests per minute per IP.
+
+#### XSS Sanitization
+Done in Form Request `passedValidation()` hooks using `strip_tags()` and `htmlspecialchars()`. Blade `{{ }}` already auto-escapes output.
+
+#### SQL Injection Prevention
+All DB queries use Eloquent (no `DB::raw()` or raw queries).
+
+#### File Upload Security
+SDM photo uploads (if added to admin later) validated via `mimes:jpg,jpeg,png` and `max:2048`. Stored in `storage/app/private/pegawai-photos` with symlink access.
+
+---
+
+### Routes Update
+
+#### [MODIFY] [web.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/routes/web.php)
+Replace inline closures with controller methods:
+
+```php
+Route::get('/', [BerandaController::class, 'index'])->name('beranda');
+
+Route::prefix('profil')->name('profil.')->group(function () {
+    Route::get('/sdm', [PegawaiController::class, 'index'])->name('sdm');
+    // sejarah, visi-misi, tugas-fungsi remain as view-only closures
+});
+
+Route::prefix('prakiraan')->name('prakiraan.')->group(function () {
+    Route::get('/cuaca', [PrakiraanCuacaController::class, 'index'])->name('cuaca');
+    // hasil-forecast remains as view-only closure
+});
+
+Route::prefix('publik')->name('publik.')->group(function () {
+    Route::get('/pengaduan', [PengaduanController::class, 'create'])->name('pengaduan');
+    Route::post('/pengaduan', [PengaduanController::class, 'store'])
+        ->middleware('throttle:5,1')
+        ->name('pengaduan.store');
+
+    Route::get('/kritik-saran', [KritikSaranController::class, 'create'])->name('kritik-saran');
+    Route::post('/kritik-saran', [KritikSaranController::class, 'store'])->name('kritik-saran.store');
+    // survei remains as-is (redirect)
+});
+```
+
+---
+
+### Database Seeder
+
+#### [NEW] [BmkgSeeder.php](file:///e:/BMKG/WEBSITE/bmkg-amahai/database/seeders/BmkgSeeder.php)
+Seed the database with:
+- Weather data (the currently hardcoded data for today's date)
+- Employee data (the currently hardcoded 10 employees)
+
+---
+
+## Verification Plan
+
+### Automated Tests
+1. Run migrations: `php artisan migrate:fresh --seed`
+2. Run existing tests: `php artisan test` — verify nothing is broken
+3. Verify routes: `php artisan route:list` — check all controllers are properly bound
+
+### Manual Verification
+1. Start dev server: `php artisan serve`
+2. Visit `/prakiraan/cuaca` — weather data should display from DB (same as before but from database)
+3. Visit `/profil/sdm` — employee cards should display from DB
+4. Visit `/publik/pengaduan` — submit the form, verify it redirects back with success message and ticket number, check `pengaduans` table has the entry
+5. Visit `/publik/kritik-saran` — submit the form, verify redirect back with success, check DB
+6. Try submitting pengaduan form 6 times rapidly — 6th request should be throttled (429 response)
+7. Try submitting with XSS payload like `<script>alert('xss')</script>` in name field — verify it's sanitized in DB

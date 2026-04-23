@@ -1,0 +1,292 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+
+class PegawaisTableSeeder extends Seeder
+{
+
+    /**
+     * Auto generated seed file
+     *
+     * @return void
+     */
+    public function run()
+    {
+        
+
+        \DB::table('pegawais')->delete();
+        
+        \DB::table('pegawais')->insert(array (
+            0 => 
+            array (
+                'id' => 12,
+                'nama' => 'Eko Wijayandi, S.T.',
+                'jabatan' => 'Kepala UPT',
+                'sub_unit' => 'kepala_upt',
+                'nip' => '198001162001121002',
+                'pendidikan' => 'S1 Teknik Elektro',
+                'golongan' => 'III/d',
+                'foto' => NULL,
+                'urutan' => 0,
+                'created_at' => '2026-04-22 01:43:26',
+                'updated_at' => '2026-04-22 01:43:26',
+            ),
+            1 => 
+            array (
+                'id' => 13,
+                'nama' => 'Roland George Lainata, S.Tr.',
+                'jabatan' => 'PMG Muda',
+                'sub_unit' => 'observer',
+                'nip' => '198705172006041002',
+                'pendidikan' => 'D4 Meteorologi',
+                'golongan' => 'III/d',
+                'foto' => NULL,
+                'urutan' => 1,
+                'created_at' => '2026-04-22 01:55:38',
+                'updated_at' => '2026-04-22 01:55:38',
+            ),
+            2 => 
+            array (
+                'id' => 14,
+                'nama' => 'DWI PURNIATI, SP',
+                'jabatan' => 'PMG Pertama',
+                'sub_unit' => 'data_informasi',
+                'nip' => '197812032003122008',
+                'pendidikan' => 'S1',
+                'golongan' => 'III/d',
+                'foto' => NULL,
+                'urutan' => 2,
+                'created_at' => '2026-04-22 01:56:16',
+                'updated_at' => '2026-04-22 01:56:16',
+            ),
+            3 => 
+            array (
+                'id' => 15,
+                'nama' => 'Roy Patrick Fautngilyanan, S.Tr',
+                'jabatan' => 'PMG Muda',
+                'sub_unit' => 'forecaster',
+                'nip' => '199501222013121001',
+                'pendidikan' => 'D4 Meteorologi',
+                'golongan' => 'III/d',
+                'foto' => NULL,
+                'urutan' => 3,
+                'created_at' => '2026-04-22 02:00:06',
+                'updated_at' => '2026-04-22 02:00:06',
+            ),
+            4 => 
+            array (
+                'id' => 16,
+                'nama' => 'Jelvianto Gunawan, S.Tr',
+                'jabatan' => 'PMG Muda',
+                'sub_unit' => 'observer',
+                'nip' => '198901132012101001',
+                'pendidikan' => 'D4 Meteorologi',
+                'golongan' => 'III/c',
+                'foto' => NULL,
+                'urutan' => 4,
+                'created_at' => '2026-04-22 02:00:40',
+                'updated_at' => '2026-04-22 02:00:40',
+            ),
+            5 => 
+            array (
+                'id' => 17,
+                'nama' => 'Christina Villarina Weking',
+                'jabatan' => 'Penelaah Teknis Kebijakan',
+                'sub_unit' => 'tata_usaha',
+                'nip' => '198310142008122001',
+                'pendidikan' => '-',
+                'golongan' => 'III/c',
+                'foto' => NULL,
+                'urutan' => 5,
+                'created_at' => '2026-04-22 02:01:22',
+                'updated_at' => '2026-04-22 02:01:22',
+            ),
+            6 => 
+            array (
+                'id' => 18,
+                'nama' => 'Jesnny Claudia Grimeldi Haurissa, S.Tr',
+                'jabatan' => 'PMG Pertama',
+                'sub_unit' => 'observer',
+                'nip' => '199509122014112001',
+                'pendidikan' => 'D4 Meteorologi',
+                'golongan' => 'III/c',
+                'foto' => NULL,
+                'urutan' => 6,
+                'created_at' => '2026-04-22 02:02:18',
+                'updated_at' => '2026-04-22 02:02:18',
+            ),
+            7 => 
+            array (
+                'id' => 19,
+                'nama' => 'Frety Cicilia Alrasyid, S.Tr',
+                'jabatan' => 'PMG Pertama',
+                'sub_unit' => 'observer',
+                'nip' => '199609202016012001',
+                'pendidikan' => 'D4 Meteorologi',
+                'golongan' => 'III/b',
+                'foto' => NULL,
+                'urutan' => 7,
+                'created_at' => '2026-04-22 02:03:25',
+                'updated_at' => '2026-04-22 02:03:25',
+            ),
+            8 => 
+            array (
+                'id' => 20,
+                'nama' => 'Brury Hevri Sitaniapessy',
+                'jabatan' => 'Pengelola Layanan Operasional',
+                'sub_unit' => 'tata_usaha',
+                'nip' => '197205271997031001',
+                'pendidikan' => '-',
+                'golongan' => 'III/b',
+                'foto' => NULL,
+                'urutan' => 8,
+                'created_at' => '2026-04-22 02:04:00',
+                'updated_at' => '2026-04-22 02:04:00',
+            ),
+            9 => 
+            array (
+                'id' => 21,
+                'nama' => 'Florendina Jehubjanan, S.Tr',
+                'jabatan' => 'PMG Pertama',
+                'sub_unit' => 'observer',
+                'nip' => '199510252020012001',
+                'pendidikan' => 'D4 Meteorologi',
+                'golongan' => 'III/b',
+                'foto' => NULL,
+                'urutan' => 9,
+                'created_at' => '2026-04-22 02:04:32',
+                'updated_at' => '2026-04-22 02:04:32',
+            ),
+            10 => 
+            array (
+                'id' => 22,
+                'nama' => 'Honoratus Bagas Aji Wijaya Sena,  S.Tr.Inst.',
+                'jabatan' => 'PMG Pertama',
+                'sub_unit' => 'teknisi',
+                'nip' => '200001162022041001',
+                'pendidikan' => 'D4 Instrumentasi',
+                'golongan' => 'III/a',
+                'foto' => NULL,
+                'urutan' => 10,
+                'created_at' => '2026-04-22 02:05:39',
+                'updated_at' => '2026-04-22 02:05:39',
+            ),
+            11 => 
+            array (
+                'id' => 23,
+                'nama' => 'Bedi Hursepuny, S.Tr.Met.',
+                'jabatan' => 'PMG Pertama',
+                'sub_unit' => 'forecaster',
+                'nip' => '198511152006041004',
+                'pendidikan' => 'D4 Meteorologi',
+                'golongan' => 'III/b',
+                'foto' => NULL,
+                'urutan' => 11,
+                'created_at' => '2026-04-22 02:06:46',
+                'updated_at' => '2026-04-22 02:06:46',
+            ),
+            12 => 
+            array (
+                'id' => 24,
+                'nama' => 'Sartje Ruhulessin',
+                'jabatan' => 'Pengolah Data dan Informasi',
+                'sub_unit' => 'tata_usaha',
+                'nip' => '197109151991032001',
+                'pendidikan' => '-',
+                'golongan' => 'III/b',
+                'foto' => NULL,
+                'urutan' => 12,
+                'created_at' => '2026-04-22 02:21:30',
+                'updated_at' => '2026-04-22 02:21:30',
+            ),
+            13 => 
+            array (
+                'id' => 25,
+                'nama' => 'Harviadhin Mariri, S.Tr. Met',
+                'jabatan' => 'PMG Pertama',
+                'sub_unit' => 'forecaster',
+                'nip' => '199803112023021001',
+                'pendidikan' => 'D4 Meteorologi',
+                'golongan' => 'III/a',
+                'foto' => NULL,
+                'urutan' => 13,
+                'created_at' => '2026-04-22 02:21:59',
+                'updated_at' => '2026-04-22 02:21:59',
+            ),
+            14 => 
+            array (
+                'id' => 26,
+                'nama' => 'Margarita Triono, S.Tr. Met',
+                'jabatan' => 'PMG Pelaksana Lanjutan / Mahir',
+                'sub_unit' => 'forecaster',
+                'nip' => '198812072010122001',
+                'pendidikan' => 'D4 Meteorologi',
+                'golongan' => 'III/a',
+                'foto' => NULL,
+                'urutan' => 14,
+                'created_at' => '2026-04-22 02:22:36',
+                'updated_at' => '2026-04-22 02:22:36',
+            ),
+            15 => 
+            array (
+                'id' => 27,
+                'nama' => 'Yoke Kristanti Dewi Tomatala, S.Tr.Met',
+                'jabatan' => 'PMG Pertama',
+                'sub_unit' => 'forecaster',
+                'nip' => '199908232021062001',
+                'pendidikan' => 'D4 Meteorologi',
+                'golongan' => 'III/b',
+                'foto' => NULL,
+                'urutan' => 15,
+                'created_at' => '2026-04-22 02:23:32',
+                'updated_at' => '2026-04-22 02:23:32',
+            ),
+            16 => 
+            array (
+                'id' => 28,
+                'nama' => 'Elisabeth Tamtalahitu',
+                'jabatan' => 'Pengolah Data dan Informasi',
+                'sub_unit' => 'tata_usaha',
+                'nip' => '198604072006042002',
+                'pendidikan' => '-',
+                'golongan' => 'III/a',
+                'foto' => NULL,
+                'urutan' => 16,
+                'created_at' => '2026-04-22 02:23:59',
+                'updated_at' => '2026-04-22 02:23:59',
+            ),
+            17 => 
+            array (
+                'id' => 29,
+                'nama' => 'Jerremy Mezac Sopacua, S.Tr.Met',
+                'jabatan' => 'PMG Pertama',
+                'sub_unit' => 'observer',
+                'nip' => '200010182025121002',
+                'pendidikan' => 'D4 Meteorologi',
+                'golongan' => 'III/a',
+                'foto' => NULL,
+                'urutan' => 17,
+                'created_at' => '2026-04-22 02:28:43',
+                'updated_at' => '2026-04-22 02:28:43',
+            ),
+            18 => 
+            array (
+                'id' => 30,
+                'nama' => 'Islam Alhafizh Bintang Samudera Wijaya Pohan, S.Tr.Inst.',
+                'jabatan' => 'PMG Pertama',
+                'sub_unit' => 'teknisi',
+                'nip' => '200306062025121002',
+                'pendidikan' => 'D4 Instrumentasi',
+                'golongan' => 'III/a',
+                'foto' => NULL,
+                'urutan' => 18,
+                'created_at' => '2026-04-22 02:29:24',
+                'updated_at' => '2026-04-22 02:29:24',
+            ),
+        ));
+        
+        
+    }
+}

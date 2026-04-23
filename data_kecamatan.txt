@@ -1,0 +1,406 @@
+1. Kecamatan Amahai (81.01.01)
+
+Kelurahan Hollo: 81.01.01.1009 
+
+Desa/Negeri:
+
+Tamilouw: 81.01.01.2001 
+
+Sepa: 81.01.01.2002 
+
+Rutah: 81.01.01.2003 
+
+Soahuku: 81.01.01.2004 
+
+Amahai: 81.01.01.2005 
+
+Haruru: 81.01.01.2006 
+
+Sehati: 81.01.01.2007 
+
+Makariki: 81.01.01.2008 
+
+Yafila: 81.01.01.2010 
+
+Banda Baru: 81.01.01.2011 
+
+Yainuelo: 81.01.01.2020 
+
+Nua Nea: 81.01.01.2021 
+
+Hatuhenu: 81.01.01.2022 
+
+Nuweletetu: 81.01.01.2023 
+
+2. Kecamatan Teon Nila Serua (81.01.02)
+Usliapan: 81.01.02.2001 
+
+Kuralele: 81.01.02.2002 
+
+Kokroman: 81.01.02.2003 
+
+Messa: 81.01.02.2004 
+
+Ameth: 81.01.02.2005 
+
+Waru: 81.01.02.2006 
+
+Bumey: 81.01.02.2007 
+
+Sifluru: 81.01.02.2008 
+
+Layeni: 81.01.02.2009 
+
+Wotay: 81.01.02.2010 
+
+Issu: 81.01.02.2011 
+
+Lesluru: 81.01.02.2012 
+
+Watludan: 81.01.02.2013 
+
+Trana: 81.01.02.2014 
+
+Jerili: 81.01.02.2015 
+
+Nakupia: 81.01.02.2016 
+
+3. Kecamatan Seram Utara (81.01.06)
+Wahai: 81.01.06.2001 
+
+Air Besar: 81.01.06.2002 
+
+Pasahari: 81.01.06.2003 
+
+Manusela: 81.01.06.2007 
+
+Kaloa: 81.01.06.2009 
+
+Kanikeh: 81.01.06.2010 
+
+Roho: 81.01.06.2011 
+
+Huaulu: 81.01.06.2012 
+
+Rumahsokat: 81.01.06.2021 
+
+Sawai: 81.01.06.2022 
+
+Besi: 81.01.06.2044 
+
+Malaku: 81.01.06.2045 
+
+Maraina: 81.01.06.2046 
+
+Solea: 81.01.06.2047 
+
+Elemata: 81.01.06.2048 
+
+Hatuolo: 81.01.06.2049 
+
+Siatele: 81.01.06.2050 
+
+Masihulan: 81.01.06.2051 
+
+Oping: 81.01.06.2052 
+
+Olong: 81.01.06.2053 
+
+4. Kecamatan Banda (81.01.09)
+Nusantara: 81.01.09.2001 
+
+Dwiwarna: 81.01.09.2002 
+
+Merdeka: 81.01.09.2003 
+
+Rajawali: 81.01.09.2004 
+
+Kampung Baru: 81.01.09.2005 
+
+Pulau Hatta: 81.01.09.2006 
+
+Selamon: 81.01.09.2007 
+
+Lonthoir: 81.01.09.2008 
+
+Pulau Ay: 81.01.09.2009 
+
+Pulau Rhun: 81.01.09.2010 
+
+Tanah Rata: 81.01.09.2011 
+
+Waer: 81.01.09.2012 
+
+Boiyauw: 81.01.09.2013 
+
+Dender: 81.01.09.2014 
+
+Lautang: 81.01.09.2015 
+
+Uring Tutra: 81.01.09.2016 
+
+Walling Spanciby: 81.01.09.2017 
+
+Combir Kasestoren: 81.01.09.2018 
+
+5. Kecamatan Tehoru (81.01.11)
+Telutih Baru: 81.01.11.2011 
+
+Mosso: 81.01.11.2012 
+
+Hatumete: 81.01.11.2013 
+
+Hatu: 81.01.11.2014 
+
+Piliana: 81.01.11.2015 
+
+Yaputih: 81.01.11.2016 
+
+Saunulu: 81.01.11.2017 
+
+Tehoru: 81.01.11.2018 
+
+Haya: 81.01.11.2019 
+
+Salamahu: 81.01.11.2020 
+
+6. Kecamatan Saparua (81.01.12)
+Booi: 81.01.12.2001 
+
+Paperu: 81.01.12.2002 
+
+Tiouw: 81.01.12.2003 
+
+Haria: 81.01.12.2004 
+
+Porto: 81.01.12.2005 
+
+Kulur: 81.01.12.2006 
+
+Saparua: 81.01.12.2012 
+
+7. Kecamatan Pulau Haruku (81.01.13)
+Aboru: 81.01.13.2001 
+
+Wassu: 81.01.13.2002 
+
+Oma: 81.01.13.2003 
+
+Haruku: 81.01.13.2004 
+
+Sameth: 81.01.13.2005 
+
+Rohomoni: 81.01.13.2006 
+
+Kabauw: 81.01.13.2007 
+
+Kailolo: 81.01.13.2008 
+
+Pelauw: 81.01.13.2009 
+
+Kariu: 81.01.13.2010 
+
+Hulaliu: 81.01.13.2011 
+
+8. Kecamatan Salahutu (81.01.14)
+Liang: 81.01.14.2001 
+
+Waai: 81.01.14.2002 
+
+Tulehu: 81.01.14.2003 
+
+Tial: 81.01.14.2004 
+
+Tengah Tengah: 81.01.14.2005 
+
+Suli: 81.01.14.2006 
+
+9. Kecamatan Leihitu (81.01.15)
+Asilulu: 81.01.15.2006 
+
+Ureng: 81.01.15.2007 
+
+Negeri Lima: 81.01.15.2008 
+
+Seith: 81.01.15.2009 
+
+Kaitetu: 81.01.15.2010 
+
+Hila: 81.01.15.2011 
+
+Wakal: 81.01.15.2012 
+
+Hitulama: 81.01.15.2013 
+
+Hitumessing: 81.01.15.2014 
+
+Mamala: 81.01.15.2015 
+
+Morella: 81.01.15.2016 
+
+10. Kecamatan Nusa Laut (81.01.16)
+Ameth: 81.01.16.2001 
+
+Titawaai: 81.01.16.2002 
+
+Abubu: 81.01.16.2003 
+
+Akoon: 81.01.16.2004 
+
+Nalahia: 81.01.16.2005 
+
+Sila: 81.01.16.2006 
+
+Leinitu: 81.01.16.2007 
+
+11. Kecamatan Kota Masohi (81.01.17)
+Kelurahan:
+
+Namaelo: 81.01.17.1001 
+
+Namasina: 81.01.17.1002 
+
+Ampera: 81.01.17.1003 
+
+Lesane: 81.01.17.1004 
+
+Letwaru: 81.01.17.1005 
+
+12. Kecamatan Seram Utara Barat (81.01.20)
+Saleman: 81.01.20.2001 
+
+Horale: 81.01.20.2002 
+
+Wailulu: 81.01.20.2003 
+
+Paa: 81.01.20.2004 
+
+Karlutu Kara: 81.01.20.2005 
+
+Pasanea: 81.01.20.2006 
+
+Labuan: 81.01.20.2007 
+
+Gale-gale: 81.01.20.2008 
+
+Latea: 81.01.20.2009 
+
+Lisabata Timur: 81.01.20.2010 
+
+Rumahwey: 81.01.20.2011 
+
+Warasiwa: 81.01.20.2012 
+
+Herlau Pauni: 81.01.20.2013 
+
+13. Kecamatan Teluk Elpaputih (81.01.21)
+Waraka: 81.01.21.2001 
+
+Tananahu: 81.01.21.2002 
+
+Liang: 81.01.21.2003 
+
+Sahulauw: 81.01.21.2004 
+
+14. Kecamatan Leihitu Barat (81.01.22)
+Larike: 81.01.22.2001 
+
+Wakasihu: 81.01.22.2002 
+
+Allang: 81.01.22.2003 
+
+Liliboy: 81.01.22.2004 
+
+Hatu: 81.01.22.2005 
+
+15. Kecamatan Telutih (81.01.23)
+Ulahahan: 81.01.23.2001 
+
+Laha Kaba: 81.01.23.2002 
+
+Lafa: 81.01.23.2003 
+
+Yamalatu: 81.01.23.2004 
+
+Hunisi: 81.01.23.2005 
+
+Laimu: 81.01.23.2006 
+
+Maneoratu: 81.01.23.2007 
+
+Tehua: 81.01.23.2008 
+
+Laha: 81.01.23.2009 
+
+Wolu: 81.01.23.2010 
+
+16. Kecamatan Seram Utara Timur Seti (81.01.24)
+Seti: 81.01.24.2001 
+
+Kobisonta: 81.01.24.2002 
+
+Wailoping: 81.01.24.2003 
+
+Tihuana: 81.01.24.2004 
+
+Waitila: 81.01.24.2005 
+
+Waiputih: 81.01.24.2006 
+
+Waimusal: 81.01.24.2007 
+
+Tanah Merah: 81.01.24.2008 
+
+Aketernate: 81.01.24.2009 
+
+Namto: 81.01.24.2010 
+
+Loping Mulyo: 81.01.24.2011 
+
+Wonosari: 81.01.24.2012 
+
+17. Kecamatan Seram Utara Timur Kobi (81.01.25)
+Kobi: 81.01.25.2001 
+
+Sariputih: 81.01.25.2002 
+
+Maneo Rendah: 81.01.25.2003 
+
+Kobimukti: 81.01.25.2004 
+
+Leaway: 81.01.25.2005 
+
+Samal: 81.01.25.2006 
+
+Morokai: 81.01.25.2007 
+
+Waimusi: 81.01.25.2008 
+
+Way Asih: 81.01.25.2009 
+
+Waitonipa: 81.01.25.2010 
+
+Marasahua: 81.01.25.2011 
+
+Kabauhari: 81.01.25.2012 
+
+18. Kecamatan Saparua Timur (81.01.26)
+Ouw: 81.01.26.2001 
+
+Ullath: 81.01.26.2002 
+
+Siri Sori Islam: 81.01.26.2003 
+
+Siri Sori Amalatu: 81.01.26.2004 
+
+Mahu: 81.01.26.2005 
+
+Tuhaha: 81.01.26.2006 
+
+Ihamahu: 81.01.26.2007 
+
+Iha: 81.01.26.2008 
+
+Nolloth: 81.01.26.2009 
+
+Itawaka: 81.01.26.2010
