@@ -13,9 +13,7 @@ class PegawaiController extends Controller
 
         // Group by sub_unit for categorized display
         $kepalaUpt = null;
-        $unitOperasional = [];
-        $unitTataUsaha = collect();
-        $ppnpn = collect();
+        $timKerja = [];
 
         if ($pegawaiDb->isNotEmpty()) {
             foreach ($pegawaiDb as $p) {
@@ -27,50 +25,61 @@ class PegawaiController extends Controller
                     'golongan' => $p->golongan,
                     'foto' => $p->foto_url,
                     'sub_unit' => $p->sub_unit,
+                    'is_ketua_tim' => $p->is_ketua_tim,
                 ];
 
                 if ($p->sub_unit === SubUnit::KepalaUpt) {
                     $kepalaUpt = $item;
-                } elseif ($p->sub_unit?->isOperasional()) {
+                } elseif ($p->sub_unit?->isTimKerja()) {
                     $key = $p->sub_unit->value;
-                    if (! isset($unitOperasional[$key])) {
-                        $unitOperasional[$key] = [
+                    if (! isset($timKerja[$key])) {
+                        $timKerja[$key] = [
                             'label' => $p->sub_unit->label(),
+                            'ketua' => null,
                             'members' => [],
                         ];
                     }
-                    $unitOperasional[$key]['members'][] = $item;
-                } elseif ($p->sub_unit === SubUnit::TataUsaha) {
-                    $unitTataUsaha->push($item);
-                } elseif ($p->sub_unit === SubUnit::Ppnpn) {
-                    $ppnpn->push($item);
+                    if ($p->is_ketua_tim) {
+                        $timKerja[$key]['ketua'] = $item;
+                    } else {
+                        $timKerja[$key]['members'][] = $item;
+                    }
                 } else {
-                    // Fallback: employees without sub_unit assigned
-                    $ppnpn->push($item);
+                    // Fallback to administrasi if no sub unit matched
+                    $key = SubUnit::TimAdministrasi->value;
+                    if (! isset($timKerja[$key])) {
+                        $timKerja[$key] = [
+                            'label' => SubUnit::TimAdministrasi->label(),
+                            'ketua' => null,
+                            'members' => [],
+                        ];
+                    }
+                    if ($p->is_ketua_tim) {
+                        $timKerja[$key]['ketua'] = $item;
+                    } else {
+                        $timKerja[$key]['members'][] = $item;
+                    }
                 }
             }
         }
 
-        // Ensure consistent ordering of operational sub-units
-        $operasionalOrder = [
-            SubUnit::Forecaster->value,
-            SubUnit::Observer->value,
-            SubUnit::DataInformasi->value,
-            SubUnit::Teknisi->value,
+        // Ensure consistent ordering of tim kerja
+        $timKerjaOrder = [
+            SubUnit::TimPrakiraan->value,
+            SubUnit::TimObservasi->value,
+            SubUnit::TimAdministrasi->value,
         ];
 
-        $sortedOperasional = [];
-        foreach ($operasionalOrder as $key) {
-            if (isset($unitOperasional[$key])) {
-                $sortedOperasional[$key] = $unitOperasional[$key];
+        $sortedTimKerja = [];
+        foreach ($timKerjaOrder as $key) {
+            if (isset($timKerja[$key])) {
+                $sortedTimKerja[$key] = $timKerja[$key];
             }
         }
 
         return view('pages.profil.sdm', [
             'kepalaUpt' => $kepalaUpt,
-            'unitOperasional' => $sortedOperasional,
-            'unitTataUsaha' => $unitTataUsaha,
-            'ppnpn' => $ppnpn,
+            'timKerja' => $sortedTimKerja,
         ]);
     }
 
@@ -79,9 +88,7 @@ class PegawaiController extends Controller
         $pegawaiDb = Pegawai::ordered()->get();
 
         $kepalaUpt = null;
-        $unitOperasional = [];
-        $unitTataUsaha = collect();
-        $ppnpn = collect();
+        $timKerja = [];
 
         foreach ($pegawaiDb as $p) {
             $item = [
@@ -89,47 +96,58 @@ class PegawaiController extends Controller
                 'jabatan' => $p->jabatan,
                 'foto' => $p->foto_url,
                 'sub_unit' => $p->sub_unit,
+                'is_ketua_tim' => $p->is_ketua_tim,
             ];
 
             if ($p->sub_unit === SubUnit::KepalaUpt) {
                 $kepalaUpt = $item;
-            } elseif ($p->sub_unit?->isOperasional()) {
+            } elseif ($p->sub_unit?->isTimKerja()) {
                 $key = $p->sub_unit->value;
-                if (! isset($unitOperasional[$key])) {
-                    $unitOperasional[$key] = [
+                if (! isset($timKerja[$key])) {
+                    $timKerja[$key] = [
                         'label' => $p->sub_unit->label(),
+                        'ketua' => null,
                         'members' => [],
                     ];
                 }
-                $unitOperasional[$key]['members'][] = $item;
-            } elseif ($p->sub_unit === SubUnit::TataUsaha) {
-                $unitTataUsaha->push($item);
-            } elseif ($p->sub_unit === SubUnit::Ppnpn) {
-                $ppnpn->push($item);
+                if ($p->is_ketua_tim) {
+                    $timKerja[$key]['ketua'] = $item;
+                } else {
+                    $timKerja[$key]['members'][] = $item;
+                }
             } else {
-                $ppnpn->push($item);
+                $key = SubUnit::TimAdministrasi->value;
+                if (! isset($timKerja[$key])) {
+                    $timKerja[$key] = [
+                        'label' => SubUnit::TimAdministrasi->label(),
+                        'ketua' => null,
+                        'members' => [],
+                    ];
+                }
+                if ($p->is_ketua_tim) {
+                    $timKerja[$key]['ketua'] = $item;
+                } else {
+                    $timKerja[$key]['members'][] = $item;
+                }
             }
         }
 
-        $operasionalOrder = [
-            SubUnit::Forecaster->value,
-            SubUnit::Observer->value,
-            SubUnit::DataInformasi->value,
-            SubUnit::Teknisi->value,
+        $timKerjaOrder = [
+            SubUnit::TimPrakiraan->value,
+            SubUnit::TimObservasi->value,
+            SubUnit::TimAdministrasi->value,
         ];
 
-        $sortedOperasional = [];
-        foreach ($operasionalOrder as $key) {
-            if (isset($unitOperasional[$key])) {
-                $sortedOperasional[$key] = $unitOperasional[$key];
+        $sortedTimKerja = [];
+        foreach ($timKerjaOrder as $key) {
+            if (isset($timKerja[$key])) {
+                $sortedTimKerja[$key] = $timKerja[$key];
             }
         }
 
         return view('pages.profil.struktur', [
             'kepalaUpt' => $kepalaUpt,
-            'unitOperasional' => $sortedOperasional,
-            'unitTataUsaha' => $unitTataUsaha,
-            'ppnpn' => $ppnpn,
+            'timKerja' => $sortedTimKerja,
         ]);
     }
 }

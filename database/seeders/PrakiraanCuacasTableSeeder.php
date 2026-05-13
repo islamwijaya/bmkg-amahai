@@ -6,7 +6,6 @@ use Illuminate\Database\Seeder;
 
 class PrakiraanCuacasTableSeeder extends Seeder
 {
-
     /**
      * Auto generated seed file
      *
@@ -14,13 +13,11 @@ class PrakiraanCuacasTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
         \DB::table('prakiraan_cuacas')->delete();
-        
-        \DB::table('prakiraan_cuacas')->insert(array (
-            0 => 
-            array (
+
+        \DB::table('prakiraan_cuacas')->insert([
+            0 => [
                 'id' => 1,
                 'kecamatan' => 'Kecamatan Amahai',
                 'tanggal' => '2026-04-18',
@@ -33,9 +30,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '☁️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            1 => 
-            array (
+            ],
+            1 => [
                 'id' => 2,
                 'kecamatan' => 'Kecamatan Amahai',
                 'tanggal' => '2026-04-18',
@@ -48,9 +44,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '⛅',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            2 => 
-            array (
+            ],
+            2 => [
                 'id' => 3,
                 'kecamatan' => 'Kecamatan Amahai',
                 'tanggal' => '2026-04-18',
@@ -63,9 +58,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '☀️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            3 => 
-            array (
+            ],
+            3 => [
                 'id' => 4,
                 'kecamatan' => 'Kecamatan Amahai',
                 'tanggal' => '2026-04-18',
@@ -78,9 +72,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '☁️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            4 => 
-            array (
+            ],
+            4 => [
                 'id' => 5,
                 'kecamatan' => 'Kecamatan Amahai',
                 'tanggal' => '2026-04-18',
@@ -93,9 +86,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '🌧️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            5 => 
-            array (
+            ],
+            5 => [
                 'id' => 6,
                 'kecamatan' => 'Kecamatan Banda',
                 'tanggal' => '2026-04-18',
@@ -108,9 +100,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '🌧️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            6 => 
-            array (
+            ],
+            6 => [
                 'id' => 7,
                 'kecamatan' => 'Kecamatan Banda',
                 'tanggal' => '2026-04-18',
@@ -123,9 +114,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '☁️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            7 => 
-            array (
+            ],
+            7 => [
                 'id' => 8,
                 'kecamatan' => 'Kecamatan Banda',
                 'tanggal' => '2026-04-18',
@@ -138,9 +128,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '⛅',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            8 => 
-            array (
+            ],
+            8 => [
                 'id' => 9,
                 'kecamatan' => 'Kecamatan Banda',
                 'tanggal' => '2026-04-18',
@@ -153,9 +142,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '🌧️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            9 => 
-            array (
+            ],
+            9 => [
                 'id' => 10,
                 'kecamatan' => 'Kecamatan Banda',
                 'tanggal' => '2026-04-18',
@@ -168,9 +156,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '☁️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            10 => 
-            array (
+            ],
+            10 => [
                 'id' => 11,
                 'kecamatan' => 'Kecamatan Tehoru',
                 'tanggal' => '2026-04-18',
@@ -183,9 +170,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '☀️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            11 => 
-            array (
+            ],
+            11 => [
                 'id' => 12,
                 'kecamatan' => 'Kecamatan Tehoru',
                 'tanggal' => '2026-04-18',
@@ -198,9 +184,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '☀️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            12 => 
-            array (
+            ],
+            12 => [
                 'id' => 13,
                 'kecamatan' => 'Kecamatan Tehoru',
                 'tanggal' => '2026-04-18',
@@ -213,9 +198,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '⛅',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            13 => 
-            array (
+            ],
+            13 => [
                 'id' => 14,
                 'kecamatan' => 'Kecamatan Tehoru',
                 'tanggal' => '2026-04-18',
@@ -228,9 +212,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '⛅',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            14 => 
-            array (
+            ],
+            14 => [
                 'id' => 15,
                 'kecamatan' => 'Kecamatan Tehoru',
                 'tanggal' => '2026-04-18',
@@ -243,9 +226,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '☀️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            15 => 
-            array (
+            ],
+            15 => [
                 'id' => 16,
                 'kecamatan' => 'Kecamatan Seram Utara',
                 'tanggal' => '2026-04-18',
@@ -258,9 +240,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '☁️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            16 => 
-            array (
+            ],
+            16 => [
                 'id' => 17,
                 'kecamatan' => 'Kecamatan Seram Utara',
                 'tanggal' => '2026-04-18',
@@ -273,9 +254,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '🌧️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            17 => 
-            array (
+            ],
+            17 => [
                 'id' => 18,
                 'kecamatan' => 'Kecamatan Seram Utara',
                 'tanggal' => '2026-04-18',
@@ -288,9 +268,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '☁️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            18 => 
-            array (
+            ],
+            18 => [
                 'id' => 19,
                 'kecamatan' => 'Kecamatan Seram Utara',
                 'tanggal' => '2026-04-18',
@@ -303,9 +282,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '⛅',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            19 => 
-            array (
+            ],
+            19 => [
                 'id' => 20,
                 'kecamatan' => 'Kecamatan Seram Utara',
                 'tanggal' => '2026-04-18',
@@ -318,9 +296,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '🌧️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            20 => 
-            array (
+            ],
+            20 => [
                 'id' => 21,
                 'kecamatan' => 'Kecamatan Masohi',
                 'tanggal' => '2026-04-18',
@@ -333,9 +310,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '⛈️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            21 => 
-            array (
+            ],
+            21 => [
                 'id' => 22,
                 'kecamatan' => 'Kecamatan Masohi',
                 'tanggal' => '2026-04-18',
@@ -348,9 +324,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '🌧️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            22 => 
-            array (
+            ],
+            22 => [
                 'id' => 23,
                 'kecamatan' => 'Kecamatan Masohi',
                 'tanggal' => '2026-04-18',
@@ -363,9 +338,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '☁️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            23 => 
-            array (
+            ],
+            23 => [
                 'id' => 24,
                 'kecamatan' => 'Kecamatan Masohi',
                 'tanggal' => '2026-04-18',
@@ -378,9 +352,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '🌧️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            24 => 
-            array (
+            ],
+            24 => [
                 'id' => 25,
                 'kecamatan' => 'Kecamatan Masohi',
                 'tanggal' => '2026-04-18',
@@ -393,9 +366,8 @@ class PrakiraanCuacasTableSeeder extends Seeder
                 'icon' => '☁️',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-        ));
-        
-        
+            ],
+        ]);
+
     }
 }

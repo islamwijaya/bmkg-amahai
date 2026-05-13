@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Pegawai;
 use App\Enums\SubUnit;
+use App\Models\Pegawai;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -163,7 +163,6 @@ class PegawaiSeeder extends Seeder
                 'urutan' => 14,
             ],
 
-
             [
                 'nama' => 'Ade Perdana Suhendratman, S.Si, M.T.',
                 'nip' => '198801012010121001',
@@ -246,7 +245,7 @@ class PegawaiSeeder extends Seeder
                 'pendidikan' => 'SMA',
                 'golongan' => '-',
                 'urutan' => 19,
-            ]
+            ],
         ];
 
         foreach ($data as $pegawai) {

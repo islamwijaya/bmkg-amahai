@@ -213,6 +213,9 @@
                                     <a href="https://web-aviation.bmkg.go.id/web/airport_forecast.php?icao=wapa" target="_blank" class="px-2 py-2 text-sm text-gray-700 hover:bg-bmkg-sky hover:text-bmkg-blue font-medium transition-colors rounded-lg">
                                         Prakiraan Cuaca Bandara
                                     </a>
+                                    <a href="https://inasiam.bmkg.go.id" target="_blank" class="px-2 py-2 text-sm text-gray-700 hover:bg-bmkg-sky hover:text-bmkg-blue font-medium transition-colors rounded-lg">
+                                        InaSIAM
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -310,6 +313,7 @@
                     <a href="{{ route('prakiraan.cuaca-perairan') }}" class="block pl-8 pr-4 py-3 text-white/90 hover:text-white hover:bg-white/5 active:bg-white/10 transition-colors border-t border-white/5">Prakiraan Cuaca Perairan</a>
                     <a href="https://peta-maritim.bmkg.go.id/ofs/" target="_blank" class="block pl-8 pr-4 py-3 text-white/90 hover:text-white hover:bg-white/5 active:bg-white/10 transition-colors border-t border-white/5">Tinggi Gelombang</a>
                     <a href="https://web-aviation.bmkg.go.id/web/airport_forecast.php?icao=wapa" target="_blank" class="block pl-8 pr-4 py-3 text-white/90 hover:text-white hover:bg-white/5 active:bg-white/10 transition-colors border-t border-white/5">Cuaca Bandara</a>
+                    <a href="https://inasiam.bmkg.go.id" target="_blank" class="block pl-8 pr-4 py-3 text-white/90 hover:text-white hover:bg-white/5 active:bg-white/10 transition-colors border-t border-white/5">InaSIAM</a>
                 </div>
             </div>
 

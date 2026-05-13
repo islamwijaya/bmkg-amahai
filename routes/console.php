@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\SatelitController;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule;
-use App\Http\Controllers\SatelitController;
 
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());

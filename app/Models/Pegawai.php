@@ -35,6 +35,7 @@ class Pegawai extends Model
         'nama',
         'jabatan',
         'sub_unit',
+        'is_ketua_tim',
         'nip',
         'pendidikan',
         'golongan',
@@ -49,6 +50,7 @@ class Pegawai extends Model
     {
         return [
             'urutan' => 'integer',
+            'is_ketua_tim' => 'boolean',
             'sub_unit' => SubUnit::class,
         ];
     }

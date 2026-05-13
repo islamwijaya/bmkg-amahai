@@ -94,9 +94,10 @@ class SettingController extends Controller
             ]);
 
             $variations = array_map(function ($item) {
-                if (!isset($item['id'])) {
+                if (! isset($item['id'])) {
                     $item['id'] = uniqid();
                 }
+
                 return $item;
             }, $request->promo_buletin_variations);
 

@@ -6,7 +6,6 @@ use Illuminate\Database\Seeder;
 
 class TransparansisTableSeeder extends Seeder
 {
-
     /**
      * Auto generated seed file
      *
@@ -14,11 +13,8 @@ class TransparansisTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
         \DB::table('transparansis')->delete();
-        
-        
-        
+
     }
 }

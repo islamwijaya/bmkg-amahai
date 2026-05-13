@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BeritaController as AdminBeritaController;
 use App\Http\Controllers\Admin\BulletinController as AdminBulletinController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\TransparansiController as AdminTransparansiController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\BulletinController;
@@ -12,10 +13,8 @@ use App\Http\Controllers\CuacaKabuController;
 use App\Http\Controllers\KritikSaranController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PengaduanController;
-use App\Http\Controllers\TransparansiController;
-use App\Http\Controllers\Admin\TransparansiController as AdminTransparansiController;
 use App\Http\Controllers\SatelitController;
-
+use App\Http\Controllers\TransparansiController;
 use Illuminate\Support\Facades\Route;
 
 /* |-------------------------------------------------------------------------- | Web Routes — Stasiun Meteorologi Kelas III Amahai |-------------------------------------------------------------------------- */
@@ -64,7 +63,7 @@ Route::group(['prefix' => 'publik', 'as' => 'publik.'], function () {
         ->name('pengaduan.store');
 
     Route::get('/buletin', [BulletinController::class, 'index'])->name('buletin');
-    
+
     Route::get('/transparansi', [TransparansiController::class, 'index'])->name('transparansi');
 });
 
@@ -78,7 +77,6 @@ Route::group(['prefix' => 'informasi', 'as' => 'informasi.'], function () {
 Route::post('satelit/sync', [SatelitController::class, 'syncPublic'])
     ->middleware('throttle:1,5')
     ->name('satelit.sync');
-
 
 // ============================================================
 // ADMIN ROUTES — Protected by auth + admin middleware

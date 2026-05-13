@@ -6,7 +6,6 @@ use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
 {
-
     /**
      * Auto generated seed file
      *
@@ -14,13 +13,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
         \DB::table('users')->delete();
-        
-        \DB::table('users')->insert(array (
-            0 => 
-            array (
+
+        \DB::table('users')->insert([
+            0 => [
                 'id' => 1,
                 'name' => 'Test User',
                 'email' => 'test@example.com',
@@ -30,45 +27,41 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => 'hsKD8puxHi',
                 'created_at' => '2026-04-18 01:09:44',
                 'updated_at' => '2026-04-18 01:09:44',
-            ),
-            1 => 
-            array (
+            ],
+            1 => [
                 'id' => 2,
                 'name' => 'Administrator',
                 'email' => 'admin@bmkg.go.id',
                 'is_admin' => 1,
-                'email_verified_at' => NULL,
+                'email_verified_at' => null,
                 'password' => '$2y$12$v56X00JpsJ.i0m6JRKQCZOItrvQeJv21JXiH3uM1lTBlMzruKUPNO',
-                'remember_token' => NULL,
+                'remember_token' => null,
                 'created_at' => '2026-04-18 01:10:21',
                 'updated_at' => '2026-04-18 01:10:21',
-            ),
-            2 => 
-            array (
+            ],
+            2 => [
                 'id' => 3,
                 'name' => 'Admin Test',
                 'email' => 'test@bmkg.go.id',
                 'is_admin' => 1,
-                'email_verified_at' => NULL,
+                'email_verified_at' => null,
                 'password' => '$2y$12$P49UBZlF4zNcCmv8LDofAeHDZiRsfMlkvESqsRgTyFaPzSiuqqnhe',
-                'remember_token' => NULL,
+                'remember_token' => null,
                 'created_at' => '2026-04-21 02:12:48',
                 'updated_at' => '2026-04-21 02:12:48',
-            ),
-            3 => 
-            array (
+            ],
+            3 => [
                 'id' => 5,
                 'name' => 'Admin Test',
                 'email' => 'test1@bmkg.go.id',
                 'is_admin' => 1,
-                'email_verified_at' => NULL,
+                'email_verified_at' => null,
                 'password' => '$2y$12$iN.ZNBLj/qmQCoF.ikyy/etw9kmSLtL3QNlqefqB8Rv0O4D3y/4EW',
-                'remember_token' => NULL,
+                'remember_token' => null,
                 'created_at' => '2026-04-21 02:18:35',
                 'updated_at' => '2026-04-21 02:18:35',
-            ),
-        ));
-        
-        
+            ],
+        ]);
+
     }
 }

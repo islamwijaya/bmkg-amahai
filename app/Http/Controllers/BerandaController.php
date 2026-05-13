@@ -113,16 +113,16 @@ class BerandaController extends Controller
             'promo_buletin_last_randomized',
         ])->pluck('value', 'key');
 
-        $variations = isset($promoBuletinSettings['promo_buletin_variations']) 
-            ? json_decode($promoBuletinSettings['promo_buletin_variations'], true) 
+        $variations = isset($promoBuletinSettings['promo_buletin_variations'])
+            ? json_decode($promoBuletinSettings['promo_buletin_variations'], true)
             : [];
-            
+
         $activeAida = null;
         if (count($variations) > 0) {
             $isRandom = $promoBuletinSettings['promo_buletin_is_random'] ?? '0';
-            $intervalDays = (int)($promoBuletinSettings['promo_buletin_interval_days'] ?? 7);
-            $activeIndex = (int)($promoBuletinSettings['promo_buletin_active_index'] ?? 0);
-            
+            $intervalDays = (int) ($promoBuletinSettings['promo_buletin_interval_days'] ?? 7);
+            $activeIndex = (int) ($promoBuletinSettings['promo_buletin_active_index'] ?? 0);
+
             // Safe parse date, defaults to far past if invalid.
             try {
                 $lastRandomized = \Carbon\Carbon::parse($promoBuletinSettings['promo_buletin_last_randomized'] ?? now()->subDays($intervalDays + 1));
@@ -140,14 +140,14 @@ class BerandaController extends Controller
                 Setting::updateOrCreate(['key' => 'promo_buletin_active_index'], ['value' => $activeIndex]);
                 Setting::updateOrCreate(['key' => 'promo_buletin_last_randomized'], ['value' => now()->toDateTimeString()]);
             }
-            
+
             $activeAida = $variations[$activeIndex] ?? $variations[0];
         } else {
             // Default placeholder if totally empty
             $activeAida = [
                 'attention' => 'Platform Informasi Cuaca Terpercaya',
                 'interest_desire' => 'Silahkan atur variasi teks melalui panel admin untuk mengubah teks promo otomatis.',
-                'action' => 'Lihat Semua Buletin'
+                'action' => 'Lihat Semua Buletin',
             ];
         }
 

@@ -31,12 +31,12 @@ class BulletinController extends Controller
 
         $bulletins = $query->get();
         $selectedId = $request->integer('active');
-        $activeBulletin = $selectedId 
-            ? $bulletins->firstWhere('id', $selectedId) 
+        $activeBulletin = $selectedId
+            ? $bulletins->firstWhere('id', $selectedId)
             : $bulletins->first();
 
         // Fallback in case the selected ID is no longer in the filtered set
-        if (!$activeBulletin) {
+        if (! $activeBulletin) {
             $activeBulletin = $bulletins->first();
         }
 

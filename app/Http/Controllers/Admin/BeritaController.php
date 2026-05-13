@@ -62,7 +62,7 @@ class BeritaController extends Controller
 
         if ($request->hasFile('images')) {
             // delete old images
-            if (!empty($berita->images)) {
+            if (! empty($berita->images)) {
                 foreach ($berita->images as $oldImage) {
                     Storage::disk('public')->delete($oldImage);
                 }
@@ -96,7 +96,7 @@ class BeritaController extends Controller
 
     public function destroy(Berita $berita): RedirectResponse
     {
-        if (!empty($berita->images)) {
+        if (! empty($berita->images)) {
             foreach ($berita->images as $image) {
                 Storage::disk('public')->delete($image);
             }

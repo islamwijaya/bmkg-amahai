@@ -6,18 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\SatelitController;
 use App\Models\Berita;
 use App\Models\Bulletin;
+use App\Models\KritikSaran;
 use App\Models\Pegawai;
+use App\Models\Pengaduan;
 use App\Models\Visitor;
 use Carbon\Carbon;
-use App\Models\KritikSaran;
-use App\Models\Pengaduan;
-use App\Models\Transparansi;
-use Illuminate\Support\Collection;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
-use Illuminate\Http\RedirectResponse;
 
 class DashboardController extends Controller
 {
@@ -121,7 +119,7 @@ class DashboardController extends Controller
                 'aksi' => $item->created_at == $item->updated_at ? 'Ditambah' : 'Diedit',
                 'aksi_color' => $item->created_at == $item->updated_at ? 'green' : 'blue',
                 'modul' => 'Informasi',
-                'ket' => ($item->created_at == $item->updated_at ? 'Menambahkan berita baru: ' : 'Mengubah berita: ') . '"' . Str::limit($item->title, 40) . '"',
+                'ket' => ($item->created_at == $item->updated_at ? 'Menambahkan berita baru: ' : 'Mengubah berita: ').'"'.Str::limit($item->title, 40).'"',
             ]);
         });
 
@@ -133,7 +131,7 @@ class DashboardController extends Controller
                 'aksi' => $item->created_at == $item->updated_at ? 'Ditambah' : 'Diedit',
                 'aksi_color' => $item->created_at == $item->updated_at ? 'green' : 'blue',
                 'modul' => 'Buletin',
-                'ket' => ($item->created_at == $item->updated_at ? 'Mengunggah Buletin: ' : 'Memperbarui Buletin: ') . '"' . Str::limit($item->title, 40) . '"',
+                'ket' => ($item->created_at == $item->updated_at ? 'Mengunggah Buletin: ' : 'Memperbarui Buletin: ').'"'.Str::limit($item->title, 40).'"',
             ]);
         });
 
@@ -145,7 +143,7 @@ class DashboardController extends Controller
                 'aksi' => $item->created_at == $item->updated_at ? 'Ditambah' : 'Diedit',
                 'aksi_color' => $item->created_at == $item->updated_at ? 'green' : 'blue',
                 'modul' => 'Pegawai',
-                'ket' => ($item->created_at == $item->updated_at ? 'Menambahkan data pegawai: ' : 'Memperbarui data pegawai: ') . '"' . $item->nama . '"',
+                'ket' => ($item->created_at == $item->updated_at ? 'Menambahkan data pegawai: ' : 'Memperbarui data pegawai: ').'"'.$item->nama.'"',
             ]);
         });
 

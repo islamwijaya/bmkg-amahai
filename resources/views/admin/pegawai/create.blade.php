@@ -72,16 +72,26 @@
                     </datalist>
                     @error('jabatan') <p class="text-xs text-red-500 mt-1">{{ $message }}</p> @enderror
                 </div>
+            <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label for="sub_unit" class="block text-sm font-semibold text-gray-700 mb-1.5">Sub Unit <span class="text-red-500">*</span></label>
+                    <label for="sub_unit" class="block text-sm font-semibold text-gray-700 mb-1.5">Tim Kerja <span class="text-red-500">*</span></label>
                     <select id="sub_unit" name="sub_unit"
                             class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-bmkg-blue/30 focus:border-bmkg-blue transition-colors bg-white @error('sub_unit') border-red-400 @enderror">
-                        <option value="">— Pilih Sub Unit —</option>
+                        <option value="">— Pilih Tim Kerja —</option>
                         @foreach(\App\Enums\SubUnit::cases() as $unit)
                         <option value="{{ $unit->value }}" @selected(old('sub_unit') === $unit->value)>{{ $unit->label() }}</option>
                         @endforeach
                     </select>
                     @error('sub_unit') <p class="text-xs text-red-500 mt-1">{{ $message }}</p> @enderror
+                </div>
+                <div>
+                    <label for="is_ketua_tim" class="block text-sm font-semibold text-gray-700 mb-1.5">Kategori Pegawai <span class="text-red-500">*</span></label>
+                    <select id="is_ketua_tim" name="is_ketua_tim"
+                            class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-bmkg-blue/30 focus:border-bmkg-blue transition-colors bg-white @error('is_ketua_tim') border-red-400 @enderror">
+                        <option value="0" @selected(old('is_ketua_tim') == '0')>Anggota Tim</option>
+                        <option value="1" @selected(old('is_ketua_tim') == '1')>Ketua Tim</option>
+                    </select>
+                    @error('is_ketua_tim') <p class="text-xs text-red-500 mt-1">{{ $message }}</p> @enderror
                 </div>
             </div>
 

@@ -24,7 +24,7 @@
                 <th class="px-6 py-4 text-left">Pegawai</th>
                 <th class="px-6 py-4 text-left">NIP</th>
                 <th class="px-6 py-4 text-left">Jabatan</th>
-                <th class="px-6 py-4 text-left">Sub Unit</th>
+                <th class="px-6 py-4 text-left">Tim Kerja</th>
                 <th class="px-6 py-4 text-center">Urutan</th>
                 <th class="px-6 py-4 text-right">Aksi</th>
             </tr>
@@ -52,7 +52,14 @@
                 <td class="px-6 py-4 text-gray-600">{{ $pegawai->jabatan }}</td>
                 <td class="px-6 py-4">
                     @if($pegawai->sub_unit)
-                    <span class="inline-flex items-center px-2 py-1 text-[10px] font-semibold rounded-full bg-bmkg-sky text-bmkg-blue">{{ $pegawai->sub_unit->label() }}</span>
+                    <div class="flex flex-col items-start gap-1">
+                        <span class="inline-flex items-center px-2 py-1 text-[10px] font-semibold rounded-full bg-bmkg-sky text-bmkg-blue">{{ $pegawai->sub_unit->label() }}</span>
+                        @if($pegawai->is_ketua_tim)
+                        <span class="inline-flex items-center px-2 py-0.5 text-[9px] font-bold rounded-full bg-bmkg-gold text-white uppercase tracking-wider shadow-sm">Ketua Tim</span>
+                        @else
+                        <span class="text-[9px] text-gray-400 uppercase tracking-wider font-semibold px-1">Anggota</span>
+                        @endif
+                    </div>
                     @else
                     <span class="text-xs text-gray-400">—</span>
                     @endif

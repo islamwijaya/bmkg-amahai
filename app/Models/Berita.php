@@ -47,7 +47,7 @@ class Berita extends Model
      */
     public function getThumbnailUrlAttribute(): ?string
     {
-        if (!empty($this->images) && is_array($this->images)) {
+        if (! empty($this->images) && is_array($this->images)) {
             return Storage::url($this->images[0]);
         }
 
@@ -63,11 +63,11 @@ class Berita extends Model
      */
     public function getImagesUrlsAttribute(): array
     {
-        if (empty($this->images) || !is_array($this->images)) {
+        if (empty($this->images) || ! is_array($this->images)) {
             return $this->thumbnail ? [Storage::url($this->thumbnail)] : [];
         }
 
-        return array_map(fn($path) => Storage::url($path), $this->images);
+        return array_map(fn ($path) => Storage::url($path), $this->images);
     }
 
     /**
